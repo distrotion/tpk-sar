@@ -1,6 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 //--------------------------------------------- Bloc
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tpk_login_arsa_01/fakedata/fakedata.dart';
 import 'package:tpk_login_arsa_01/script/bloc/BlocChagpage.dart';
 import 'package:tpk_login_arsa_01/script/bloc/login/login_bloc.dart';
 import 'package:tpk_login_arsa_01/script/bloc/login/login_event.dart';
@@ -14,6 +17,16 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     context.read<LoginBloc>().add(LoginEvent.inintlogin);
     BlocProvider.of<SwPageCubit>(context).togglePage("Page1");
+
+    //----------------------------------------------------------
+
+    var _testdata = testdata;
+    var _testbuffer = testdata[0]['data']![1]['data'];
+
+    //----------------------------------------------------------
+
+    print(_testbuffer);
+
     return Scaffold(
       body: Center(
         child: Container(

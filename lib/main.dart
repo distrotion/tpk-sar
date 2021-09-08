@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tpk_login_arsa_01/script/bloc/login/login_state.dart';
 
 import 'script/bloc/BlocPageRebuild.dart';
 import 'switchPage.dart';
@@ -8,6 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 //---------------------------------------------
 
 void main() {
+  Bloc.observer = LoginBlocObserver();
   runApp(MyApp());
 }
 

@@ -35,9 +35,11 @@ Stream<String> login_fn(String state) async* {
   // state = '';
   //===================================================
 
-  final response = await http.post(Uri.parse("http://localhost:9000/login"),
+  final response = await http.post(Uri.parse("http://localhost:9200/logindb"),
       body: {"user": GloUserID, "password": GloPassword});
   var databuff;
+
+  print(response.body);
   if (response.statusCode == 200) {
     databuff = jsonDecode(response.body);
     if (databuff['Status'] == 'ok') {
